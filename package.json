@@ -1,6 +1,6 @@
 {
   "name": "gpc-scenario-outline-expander",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "This GherKing precompiler is responsible for converting Scenario Outlines to single Scenarios as Cucumber would do and adds the first column as a tag.",
   "main": "index.js",
   "types": "index.d.ts",

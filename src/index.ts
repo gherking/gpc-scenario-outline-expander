@@ -2,8 +2,8 @@
 
 import { PreCompiler, ScenarioOutline, Tag } from "gherking";
 import { ScenarioOutlineExpanderConfig } from "./types";
-
-const debug = require("debug");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const debug = require("debug")("gpc:scenario-outline-expander");
 
 const DEFAULT_CONFIG: ScenarioOutlineExpanderConfig = {
     ignoreTag: '@notExpand'
