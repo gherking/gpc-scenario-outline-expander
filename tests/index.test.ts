@@ -2,6 +2,7 @@
 
 import { load, process } from "gherking";
 import { Document } from "gherkin-ast";
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const ScenarioOutlineExpander = require("../src")
 
 const loadTestFeatureFile = async (file: string): Promise<Document> => {
