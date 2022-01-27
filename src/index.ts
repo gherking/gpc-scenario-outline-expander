@@ -6,7 +6,7 @@ import { ScenarioOutlineExpanderConfig } from "./types";
 const debug = require("debug")("gpc:scenario-outline-expander");
 
 const DEFAULT_CONFIG: ScenarioOutlineExpanderConfig = {
-    ignoreTag: '@notExpand'
+    ignoreTag: 'notExpand'
 }
 
 class ScenarioOutlineExpander implements PreCompiler {
@@ -21,7 +21,7 @@ class ScenarioOutlineExpander implements PreCompiler {
     };
 
     private isIgnoreTag(tag: Tag): boolean {
-        return this.config.ignoreTag === tag.toString();
+        return this.config.ignoreTag === tag.name;
     }
 
     // @ts-ignore

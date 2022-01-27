@@ -3,7 +3,7 @@
 import { load, process } from "gherking";
 import { Document, pruneID } from "gherkin-ast";
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const ScenarioOutlineExpander = require("../src")
+import ScenarioOutlineExpander = require("../src")
 
 const loadTestFeatureFile = async (file: string): Promise<Document> => {
     const ast: Document[] = pruneID(await load(`./tests/data/${file}`)) as Document[];
@@ -20,14 +20,16 @@ describe("Scenario Outline Expander", () => {
 
     test("should expand scenario outline with default config", async () => {
         const expected = await loadTestFeatureFile("expected.1.feature");
+        // @ts-ignore
         const actual = pruneID(process(base, new ScenarioOutlineExpander())) as Document[];
         expect(actual[0]).toEqual(expected);
     });
 
     test("should expand scenario outline with custom config", async () => {
         const expected = await loadTestFeatureFile("expected.2.feature");
+        // @ts-ignore
         const actual = pruneID(process(base, new ScenarioOutlineExpander({
-            ignoreTag: '@expand'
+            ignoreTag: 'expand'
         }))) as Document[];
         expect(actual[0]).toEqual(expected);
     });

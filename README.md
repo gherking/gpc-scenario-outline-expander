@@ -5,7 +5,7 @@ This precompiler is responsible for converting Scenario Outlines to single Scena
 
 ## Example:
 
-```gherkin0
+```gherkin
   @tag1
   Scenario Outline: Test language (<language>)
     Given I am on Home page <language> user
